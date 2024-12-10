@@ -1,8 +1,8 @@
 # 2. 数据集操作指引
 
-用户可以在 **数据资源** 标签页面查看数据集，以及进行数据集的相关操作
+用户可以在 **数据资源** 标签页面查看数据集列表，进行数据集的操作
 
-![数据集](../../images/dataset/dataset.png)
+![](../../images/dataset/dataset.png)
 
 ## 2.1 数据集展示
 
@@ -45,14 +45,14 @@
 - 资源标签
   - 数据集标签信息，可选项
 
-![基本信息](../../images/dataset/dataset_base_info.png)
+![](../../images/dataset/dataset_base_info.png)
 
 ### 2.2.2 资源来源
 
-数据集数据来源支持下面的类型:
+数据集数据来源支持的类型:
     CSV文件、EXCEL文件、HDFS、HIVE、数据库。
 
-![数据源](../../images/dataset/dataset_datasource.png)
+![](../../images/dataset/dataset_datasource.png)
 
 - CSV文件
 ![数据源_CSV](../../images/dataset/dataset_datasource_csv.png)
@@ -62,21 +62,21 @@
 ----------------------------------------------------------------
 
 - EXCEL文件
-![数据源_Excel](../../images/dataset/dataset_datasource_excel.png)
+![](../../images/dataset/dataset_datasource_excel.png)
 
 用户选择需要上传的excel文件。
 
 ----------------------------------------------------------------
 
 - HDFS
-![数据源_HDFS](../../images/dataset/dataset_datasource_hdfs.png)
+![](../../images/dataset/dataset_datasource_hdfs.png)
 
 用户填写HDFS上存在csv文件路径。
 
 ----------------------------------------------------------------
 
 - HIVE
-![数据源_HIVE](../../images/dataset/dataset_datasource_hive.png)
+![](../../images/dataset/dataset_datasource_hive.png)
 
 - 数据类型:
   - 静态数据
@@ -97,11 +97,11 @@
   - 人大金仓
   - 神通
 
-![数据库类型列表](../../images/dataset/dataset_datasource_db.png)
+![](../../images/dataset/dataset_datasource_db.png)
 
 参数:
 
-![数据库参数](../../images/dataset/dataset_datasource_db_params.png)
+![](../../images/dataset/dataset_datasource_db_params.png)
 
 - 数据类型
   - 静态数据
@@ -126,16 +126,18 @@
 这里的数据权限指的是数据集的可见性权限。
 
 - 可见范围: 私有
+  
   可见性为私有的数据集仅仅对数据集的属主用户可见，其他用户均不可见该数据集。
 
-![数据源私有](../../images/dataset/dataset_visible_private.png)
+![](../../images/dataset/dataset_visible_private.png)
 
 - 可见范围: 公开可用
+  
   公开可用的数据集根据可见范围不同，可见的用户也不相同。
 
   **注意**: 创建新的数据集成功后, 该数据集可见范围为公开可用时，其他用户可以在数据集页面, 标签为 **可申请的** 数据列表里面看到该数据集。
 
-![数据源公开可用](../../images/dataset/dataset_visible_public.png)
+![](../../images/dataset/dataset_visible_public.png)
 
 - 本机构内
   - 同一机构的用户可见
@@ -154,25 +156,24 @@
 
 默认的审批流如下：
 
-![审批流](../../images/dataset/dataset_approval.png)
+![](../../images/dataset/dataset_approval.png)
 
 用户可以添加审批人员：
 
-![审批流新增节点](../../images/dataset/dataset_approval_add.png)
+![](../../images/dataset/dataset_approval_add.png)
 
 ## 2.3 申请数据集
 
 用户可以在数据集页面, 标签为 **可申请的** 数据列表里面看到可以申请的数据集列表。
 
-![可申请数据集](../../images/dataset/dataset_approval_page.png)
+![](../../images/dataset/dataset_approval_page.png)
 
 申请流程：
 
-- 选择申请的数据集
-- 点击'申请使用'
-- 填写申请单
-申请单格式如下:
-![数据集申请单](../../images/dataset/dataset_approval_detail.png)
+- 选择数据集
+- 点击【申请使用】
+- 填写申请单，申请单格式如下:
+![](../../images/dataset/dataset_approval_detail.png)
 
   - 申请标题
     - 申请单的标题，用户自填
