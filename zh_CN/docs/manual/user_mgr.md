@@ -15,20 +15,20 @@
 
 ![](../../images/user/user_mgr_list.png)
 
-### 管理员创建用户组
+## 管理员创建用户组
 系统默认生成了一个初始用户组，所有新用户注册后默认都在初始化用户组，后续可以加入其他用户组。管理员可以创建新的用户组，并指定用户组中的成员为用户组管理员。
 
 ![](../../images/user/create_user_group.png)
 
 
-### 管理员添加用户
+## 管理员添加用户
 点击查看用户，然后添加机构内注册的用户
 
 ![](../../images/user/add_user_step1.png)
 ![](../../images/user/add_user_step2.png)
 
 
-### 用户组删除用户
+## 用户组删除用户
 使用用户组管理员登录，可以查看所管理的用户组，并且可以添加用户，移除用户，变更用户组管理
 ![](../../images/user/remove_user_step1.png)
 ![](../../images/user/remove_user_step2.png)
