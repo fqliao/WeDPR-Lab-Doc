@@ -4,6 +4,7 @@
 联合统计任务支持通过简洁的SQL语法来定义多方联合计算任务。
 ### 9.1.1 数据类型
 支持数值类型的数据，包括整数和浮点数。数据表必须包含id列，表中不允许出现空值，合法的数据示例如下：
+
 | **id**       | **age** | **tax**|   **accumulation_fund**|
 | ------------ | --------|---------- | -------|
 | **9527**     | 30 | 100000        | 150000 |
@@ -11,13 +12,14 @@
 | **9529**     | 40 | 400000        | 600000 |
 
 ### 9.1.2 语法
-基础语句：SELECT、FROM、WHERE、JOIN、INNER JOIN、ON、AS
-复杂特性：GROUP BY
-运算符合：+、-、*、/、>、<、==
-聚合函数：COUNT、SUM、AVG、MAX、MIN
+- 基础语句：SELECT、FROM、WHERE、JOIN、INNER JOIN、ON、AS
+- 复杂特性：GROUP BY
+- 运算符合：+、-、*、/、>、<、==
+- 聚合函数：COUNT、SUM、AVG、MAX、MIN
 
 ### 9.1.3 聚合函数
-| 聚合函数 | 描述         |
+
+| **聚合函数** | **描述**     |
 |----------|------------|
 | COUNT    | 用于统计数据数目 |
 | SUM      | 用于计算数据之和 |
@@ -63,13 +65,6 @@ WHERE condition;
 - **table_name**：要查询的表名称。
 
 #### JOIN
-
-SQL join 用于把来自两个或多个表的行结合起来。
-
-SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。
-
-**SQL INNER JOIN**。 
-
 SQL INNER JOIN 从多个表中返回满足 JOIN 条件的所有行。
 
 ```sql
@@ -92,11 +87,7 @@ ON table1.column_name=table2.column_name;
 
 #### 别名 AS
 
-通过使用 SQL，可以为表名称或列名称指定别名。
-
-通过使用 SQL，可以为表名称或列名称指定别名。
-
-基本上，创建别名是为了让列名称的可读性更强。
+通过使用 SQL，可以为表名称或列名称指定别名，创建别名是为了让列名称的可读性更强。
 
 列别名
 
@@ -187,50 +178,7 @@ GROUP BY s1.field4
 ```
 
 ### 9.1.5 综合使用示例
-```sql
-# 使用了数据源（source0, source1, source2）来计算两个结果（r0 和 r1），并将它们作为新的列返回
-SELECT 3*(s1.field3 + s2.field3) - s0.field3 AS r0,
-
-​       (s0.field1 + s2.field1) / 2 * s1.field1 AS r1
-
-FROM (source0 AS s0
-
-​      INNER JOIN source1 AS s1 ON s0.id = s1.id)
-
-INNER JOIN source2 AS s2 ON s0.id = s2.id;
-```
-
-1. 查询选择的列:
-
-- r0: 这是通过计算得到的一个新列，计算方法是 3*(s1.field3 + s2.field3) - s0.field3。
-- r1: 这是另一个新列，计算方法是 ((s0.field1 + s2.field1) / 2) * s1.field1。
-
-2. FROM子句:
-
-- source0 AS s0: 这是查询的主数据源，被别名为 s0。
-- source1 AS s1 和 source2 AS s2: 这是另外两个要连接的数据源，分别被别名为 s1 和 s2。
-
-3. INNER JOIN子句:
-
-- 第一个 INNER JOIN 是 source1 AS s1 与 source0 AS s0 的连接，连接条件是 s0.id = s1.id，意味着只有在 id 字段匹配的情况下，来自 source1 和 source0 的记录才会被包括在结果集中。
-
-- 第二个 INNER JOIN 是 source2 AS s2 与已经连接的 (source0 AS s0 INNER JOIN source1 AS s1) 的连接，连接条件同样是 s0.id = s2.id。
-
-4. 计算逻辑:
-
-- 对于 r0:
-  - 从 source1 和 source2 中选择 field3 字段的值，将它们相加。
-  - 将这个和乘以3。
-  - 从结果中减去 source0 中的 field3 字段值。
-- 对于 r1:
-  - 从 source0 和 source2 中选择 field1 字段的值，将它们相加。
-  - 将这个和除以2，得到平均值。
-  - 将这个平均值与 source1 中的 field1 字段值相乘。
-
-5. 结果:
-
-- 查询结果将包含两列：r0 和 r1，每一行的数据都是基于连接的三个数据源和上述计算逻辑得出的。
-
+这段SQL查询代码使用了数据源（`source0`, `source1`, `source2`）进行连接，并基于这些数据源的字段执行一系列聚合计算，最后根据`source1`中的`field4`字段值进行分组。
 ```sql
 SELECT 3*s1.field4 AS r0,
        COUNT(s1.field4) AS 'count',
@@ -243,8 +191,7 @@ FROM (source0 AS s0
 INNER JOIN source2 AS s2 ON s0.id = s2.id
 GROUP BY s1.field4;
 ```
-
-这段SQL查询代码使用了数据源（`source0`, `source1`, `source2`）进行连接，并基于这些数据源的字段执行一系列聚合计算，最后根据`source1`中的`field4`字段值进行分组。下面是对这段SQL的详细解释：
+下面是对这段SQL的详细解释：
 
 1. **选择列表**:
    - `3*s1.field4 AS r0`: 选择`source1`中的`field4`字段值，乘以3，并将结果命名为`r0`。
