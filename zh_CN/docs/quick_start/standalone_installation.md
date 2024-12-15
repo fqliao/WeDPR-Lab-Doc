@@ -172,6 +172,23 @@ mkdir -p sdk && cp -r ~/fisco/nodes/127.0.0.1/sdk/* sdk/
 sed -i 's/blockchain_cert_path = ""/blockchain_cert_path = "sdk"/g' config.toml
 ```
 
+**步骤八： 配置jupyter外网访问ip**
+
+```eval_rst
+.. note::
+   - 如果是云环境部署，请配置 ``jupyter_external_ip`` , 通过外网ip来访问jupyter
+   - 如果没有配置外网ip，默认会使用deploy_ip来访问jupyter
+```
+
+```bash
+    [agency.jupyter_worker]
+        deploy_ip = ["192.168.1.2:1"]
+        # the server start port
+        server_start_port = "19000"
+        jupyter_external_ip = ""
+```
+
+
 
 ## 2.4 生成隐私计算服务配置
 
@@ -549,6 +566,27 @@ mkdir -p ~/wedpr/ && cp -r ~/wedpr-generated/wedpr-example ~/wedpr  && cd ~/wedp
 
 **步骤二：初始化站点端DB配置**
 
+- 创建数据库
+```eval_rst
+.. note::
+   当且仅当数据库不存在时才需创建
+```
+
+```bash
+    [agency.mysql]
+        database = "agency0"
+# 获取agency0的数据库名称, 确认不存在后，连接到对应的数据库，执行数据库创建命令:
+create database agency0
+
+
+    [agency.mysql]
+        database = "agency1"
+# 获取agency1的数据库名称, 确认不存在后，连接到对应的数据库，执行数据库创建命令:
+create database agency1
+
+```
+
+- 初始化数据库
 
 ```eval_rst
 .. note::
