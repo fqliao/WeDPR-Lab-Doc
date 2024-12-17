@@ -14,7 +14,7 @@
 
 ## 2.1 部署前置依赖
 
-WeDPR隐私计算平台搭建前，需准备好[MYSQL](https://hub.docker.com/_/mysql), [HDFS](https://github.com/apache/hadoop/tree/trunk)和[FISCO BCOS v3.0]((https://fisco-bcos-doc.readthedocs.io/zh-cn/latest/index.html))区块链系统环境。
+WeDPR隐私计算平台搭建前，需准备好[MYSQL](https://hub.docker.com/_/mysql), [HDFS](https://github.com/apache/hadoop/tree/trunk)和[FISCO BCOS v3.0](https://fisco-bcos-doc.readthedocs.io/zh-cn/latest/index.html)区块链系统环境。
 前置依赖的搭建可参考[依赖安装](../op/pre_installation.md).
 
 
