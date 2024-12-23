@@ -170,7 +170,7 @@ html_context = {
     "github_repo": "WeDPR-Lab-Doc", # Repo name
     "github_user": "WeBankBlockchain",
     "github_version": "release-3", # Version
-    "conf_py_path": "/", # Path in the checkout to the docs root
+    "conf_py_path": "/zh_CN/", # Path in the checkout to the docs root
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
